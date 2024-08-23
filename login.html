@@ -12,7 +12,7 @@
     <h1>Entre na sua conta</h1>
     <!--colocar botão para voltar a tela inicial para qm nao quer logar ou criar a conta -->
 
-    <form action="index.html">
+    <form action="index.html" onsubmit="enviarLogin(event)">
 
         <div>
         <p >
@@ -22,13 +22,77 @@
         <p > Digite sua senha: <input minlength="8" type="password" required></p>
         
 
-        <button  ><a href="index.html" target="_blank"></a>Entrar</button></div>
+        <button><a href="index.html" target="_blank"></a>Entrar</button></div>
 
         <p class="termo">Ainda não tem conta?<a target="_blank" href="cadastro.html">Clique aqui para fazer</a></p>
+
           
     </form>
+
     <br/>
     <br/>
+
+    <script>
+
+    function enviarLogin(e){
+
+    e.preventDefault(); // evita o refresh da página
+    console.log("login")
+
+
+    const login = {
+ 
+    email:"",
+    senha:""
+
+    };
+
+    login.email = e.target.email.value;
+    login.senha = e.target.senha.value;
+
+    console.log("email:",login.email);
+    console.log("senha:",login.senha);
+
+    if (login.email == "buffet@gmail.com"){
+
+    console.log("Email correto");
+    }
+
+    else {
+
+
+    console.log("Email incorreto!");
+
+
+    }
+
+    if (usuario.senha == "senha123"){
+
+    console.log("Senha correta");
+
+
+    }
+
+    else {
+
+
+     console.log("Senha incorreta!");
+
+
+    }
+
+
+
+
+
+
+}
+
+ </script>
+
+
+
+    
 
    
     
